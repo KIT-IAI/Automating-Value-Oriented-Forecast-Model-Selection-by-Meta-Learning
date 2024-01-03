@@ -18,9 +18,9 @@ Use the given requirements_classification.txt to create a python environment wit
 
 
 ## Data
- The [solar home electricity dataset](https://www.ausgrid.com.au/Industry/Our-Research/Data-to-share/Solar-home-electricity-data) was used for the paper. This dataset consists of 3 data files for the years 2010 - 2013. To run the forecasting pipeline, the data must be downloaded and prepared so that all 3 years are concatenated and the columns contain the prosumption data of a single house. Additionally, the considered factors have to be applied.
-Further, the data has to be placed at "data/solar_home_all_data_2010-2013{args.factor}.csv" , where args.factor is for example "_ldiv2".
-This data is then fed into the forecasting and optimisation pipeline in https://github.com/KIT-IAI/Impact-of-Forecast-Characteristics-on-Forecast-Value-for-Dispatchable-Feeder, which generates different forecasts and calculates the results of the optimisation problem.  
+ The [solar home electricity dataset](https://www.ausgrid.com.au/Industry/Our-Research/Data-to-share/Solar-home-electricity-data) was used for the paper. This dataset consists of 3 data files for the years 2010 - 2013. 
+This data is fed into the forecasting and optimisation pipeline in https://github.com/KIT-IAI/Impact-of-Forecast-Characteristics-on-Forecast-Value-for-Dispatchable-Feeder, which generates different forecasts and calculates the results of the optimisation problem. Based on the results of the optimisation problem, the target variables for the classification can be calculated. The results have to be placed at "data/data_analysis/target_imb2.csv".
+To generate the input features for the classification, the Ausgrid dataset must be prepared so that all 3 years are concatenated and the columns contain the data of a single house. Further, the data has to be placed at "data/data/solar_gg_all_2010-2013.csv", "data/data/solar_gc_all_2010-2013.csv", and "data/data/solar_cl_all_2010-2013.csv". 
 
 
 ## License
