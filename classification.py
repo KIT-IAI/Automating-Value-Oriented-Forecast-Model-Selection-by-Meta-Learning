@@ -143,7 +143,7 @@ x_test = pca.transform(x_test)
 
 
 ###Perform classification
-classifier = [XGBClassifier(), KNeighborsClassifier(), SVC(), MLPClassifier(max_iter=1500), DecisionTreeClassifier(),
+classifier = [XGBClassifier(), KNeighborsClassifier(), SVC(), MLPClassifier(max_iter=1000), DecisionTreeClassifier(),
               GaussianNB()]
 result = {}
 for c, classi in enumerate(classifier):
