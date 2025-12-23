@@ -18,8 +18,11 @@ Use the given requirements_classification.txt to create a python environment wit
 
 
 ## Data
- The [solar home electricity dataset](https://www.ausgrid.com.au/Industry/Our-Research/Data-to-share/Solar-home-electricity-data) was used for the paper. This dataset consists of 3 data files for the years 2010 - 2013. 
-This data is fed into the forecasting and optimisation pipeline in https://github.com/KIT-IAI/Impact-of-Forecast-Characteristics-on-Forecast-Value-for-Dispatchable-Feeder, which generates different forecasts and calculates the results of the optimisation problem. Based on the results of the optimisation problem, the target variables for the classification can be calculated. The results have to be placed at "data/data_analysis/target_imb2.csv".
+The [solar home electricity dataset](https://www.ausgrid.com.au/Industry/Our-Research/Data-to-share/Solar-home-electricity-data) was used for the paper. This dataset consists of 3 data files for the years 2010 - 2013. To extend the dataset, additional scenarios were generated using load scaling factors
+$\beta_{\text{load}}$ and PV power generation scaling factors $\beta_{\text{PV}}$. The considered parameter combinations $(\beta_{\text{load}}, \beta_{\text{PV}})$ were:
+(2.5, 0.5), (1, 0.5), (0.25, 0.5), (0.1, 0.5), (0.5, 0.5), (0.5, 2.5), and (0.5, 5).
+This data is fed into the forecasting and optimisation pipeline in https://github.com/KIT-IAI/Impact-of-Forecast-Characteristics-on-Forecast-Value-for-Dispatchable-Feeder, which generates different forecasts and calculates the results of the optimisation problem. 
+Based on the results of the optimisation problem, the target variables for the classification can be calculated. The results have to be placed at "data/data_analysis/target_imb2.csv".
 To generate the input features for the classification, the Ausgrid dataset must be prepared so that all 3 years are concatenated and the columns contain the data of a single house. Further, the data has to be placed at "data/data/solar_gg_all_2010-2013.csv", "data/data/solar_gc_all_2010-2013.csv", and "data/data/solar_cl_all_2010-2013.csv". 
 
 
